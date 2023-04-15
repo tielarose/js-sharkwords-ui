@@ -1,18 +1,18 @@
-const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
+const ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 
 const WORDS = [
-  'strawberry',
-  'orange',
-  'apple',
-  'banana',
-  'pineapple',
-  'kiwi',
-  'peach',
-  'pecan',
-  'eggplant',
-  'durian',
-  'peanut',
-  'chocolate',
+  "strawberry",
+  "orange",
+  "apple",
+  "banana",
+  "pineapple",
+  "kiwi",
+  "peach",
+  "pecan",
+  "eggplant",
+  "durian",
+  "peanut",
+  "chocolate"
 ];
 
 const numWrong = 0;
@@ -24,7 +24,12 @@ const numWrong = 0;
 // `<div class="letter-box ${letter}"></div>`
 //
 const createDivsForChars = (word) => {
-  // Replace this with your code
+  let wordContainer = document.querySelector("#word-container");
+
+  for (const letter of word) {
+    let letterDiv = `<div class="letter-box ${letter}"></div>`;
+    wordContainer.insertAdjacentHTML("beforeend", letterDiv);
+  }
 };
 
 // Loop over each letter in the alphabet and generate a button for each letter
@@ -57,7 +62,7 @@ const isLetterInWord = (letter, word) => {
   // You can change this to choose a random word from WORDS once you
   // finish this lab but we hard code it so we know what the word is
   // and can tell if things look correct for this word
-  const word = 'hello';
+  const word = "hello";
 
   createDivsForChars(word);
 
