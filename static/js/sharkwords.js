@@ -56,8 +56,30 @@ const disableLetterButton = (buttonEl) => {
 // It should return `true` if `letter` is in the word
 // For now, you should test it out to make sure it works
 
-const isLetterInWord = (letter, word) => {
-  return word.includes(letter);
+const isLetterInWord = (letter) =>
+  document.querySelector(`div.${letter}`) !== null;
+
+// Called when `letter` is in word. Update contents of divs with `letter`.
+//
+const handleCorrectGuess = (letter) => {
+  // Replace this with your code
+};
+
+//
+// Called when `letter` is not in word.
+//
+// Increment `numWrong` and update the shark image.
+// If the shark gets the person (5 wrong guesses), disable
+// all buttons and show the "play again" message.
+
+const handleWrongGuess = () => {
+  numWrong += 1;
+  // Replace this with your code
+};
+
+//  Reset game state. Called before restarting the game.
+const resetGame = () => {
+  window.location = "/sharkwords";
 };
 
 // This is like if __name__ == '__main__' in Python
@@ -68,12 +90,18 @@ const isLetterInWord = (letter, word) => {
   // You can change this to choose a random word from WORDS once you
   // finish this lab but we hard code it so we know what the word is
   // and can tell if things look correct for this word
-  const word = "hello";
+  // const word = "hello";
+  let randomIndex = Math.floor(Math.random() * WORDS.length);
+  let randomWord = WORDS[randomIndex];
 
-  createDivsForChars(word);
+  createDivsForChars(randomWord);
 
   generateLetterButtons();
 
-  // in the next lab, you will be adding functionality to handle when
-  // someone clicks on a letter
+  for (const button of document.querySelectorAll('button')) {
+    // add an event handler to handle clicking on a letter button
+    // YOUR CODE HERE
+
+  // add an event handler to handle clicking on the Play Again button
+  // YOUR CODE HERE
 })();
