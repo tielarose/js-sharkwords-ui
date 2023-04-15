@@ -15,7 +15,7 @@ const WORDS = [
   "chocolate"
 ];
 
-const numWrong = 0;
+let numWrong = 0;
 
 // Loop over the letters in `word` and create divs.
 // The divs should be appended to the section with id="word-container".
@@ -79,6 +79,17 @@ const handleCorrectGuess = (letter) => {
 const handleWrongGuess = () => {
   numWrong += 1;
   // Replace this with your code
+  const image = document.querySelector("#shark-img img");
+  image.setAttribute("src", `/static/images/guess${numWrong}.png`);
+
+  if (numWrong >= 5) {
+    const allButtons = document.querySelectorAll("#letter-buttons button");
+    for (const button of allButtons) {
+      disableLetterButton(button);
+    }
+    const playAgainMessage = document.querySelector("#play-again");
+    playAgainMessage.setAttribute("style", "display: block");
+  }
 };
 
 //  Reset game state. Called before restarting the game.
