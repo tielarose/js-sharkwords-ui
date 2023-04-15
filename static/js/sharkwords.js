@@ -62,7 +62,11 @@ const isLetterInWord = (letter) =>
 // Called when `letter` is in word. Update contents of divs with `letter`.
 //
 const handleCorrectGuess = (letter) => {
-  // Replace this with your code
+  const letterDivs = document.querySelectorAll(`.${letter}`);
+
+  for (const div of letterDivs) {
+    div.innerHTML = `${letter}`;
+  }
 };
 
 //
@@ -90,18 +94,18 @@ const resetGame = () => {
   // You can change this to choose a random word from WORDS once you
   // finish this lab but we hard code it so we know what the word is
   // and can tell if things look correct for this word
-  // const word = "hello";
-  let randomIndex = Math.floor(Math.random() * WORDS.length);
-  let randomWord = WORDS[randomIndex];
+  const word = "hello";
+  // let randomIndex = Math.floor(Math.random() * WORDS.length);
+  // let randomWord = WORDS[randomIndex];
 
-  createDivsForChars(randomWord);
+  createDivsForChars(word);
 
   generateLetterButtons();
 
-  for (const button of document.querySelectorAll('button')) {
+  for (const button of document.querySelectorAll("button")) {
     // add an event handler to handle clicking on a letter button
     // YOUR CODE HERE
-
-  // add an event handler to handle clicking on the Play Again button
-  // YOUR CODE HERE
+    // add an event handler to handle clicking on the Play Again button
+    // YOUR CODE HERE
+  }
 })();
