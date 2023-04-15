@@ -24,10 +24,10 @@ const numWrong = 0;
 // `<div class="letter-box ${letter}"></div>`
 //
 const createDivsForChars = (word) => {
-  let wordContainer = document.querySelector("#word-container");
+  const wordContainer = document.querySelector("#word-container");
 
   for (const letter of word) {
-    let letterDiv = `<div class="letter-box ${letter}"></div>`;
+    const letterDiv = `<div class="letter-box ${letter}"></div>`;
     wordContainer.insertAdjacentHTML("beforeend", letterDiv);
   }
 };
@@ -36,6 +36,12 @@ const createDivsForChars = (word) => {
 // The buttons should be appended to the section with id="letter-buttons".
 const generateLetterButtons = () => {
   // Replace this with your code
+  const letterButtons = document.querySelector("#letter-buttons");
+
+  for (const letter of ALPHABET) {
+    const button = `<button>${letter}</button>`;
+    letterButtons.insertAdjacentHTML("beforeend", button);
+  }
 };
 
 // Set the `disabled` property of `buttonEl` to true.
