@@ -49,7 +49,7 @@ const generateLetterButtons = () => {
 // `buttonEl` is an `HTMLElement` object.
 //
 const disableLetterButton = (buttonEl) => {
-  // Replace this with your code
+  buttonEl.disabled = true;
 };
 
 // This is a helper function we will use in the future
@@ -57,7 +57,7 @@ const disableLetterButton = (buttonEl) => {
 // For now, you should test it out to make sure it works
 
 const isLetterInWord = (letter, word) => {
-  // Replace this with your code
+  return word.includes(letter);
 };
 
 // This is like if __name__ == '__main__' in Python
