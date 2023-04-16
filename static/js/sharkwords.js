@@ -101,15 +101,10 @@ const resetGame = () => {
 // It will be called when the file is run (because
 // we call the function on line 66)
 (function startGame() {
-  // For now, we'll hardcode the word that the user has to guess
-  // You can change this to choose a random word from WORDS once you
-  // finish this lab but we hard code it so we know what the word is
-  // and can tell if things look correct for this word
-  const word = "hello";
-  // let randomIndex = Math.floor(Math.random() * WORDS.length);
-  // let randomWord = WORDS[randomIndex];
+  let randomIndex = Math.floor(Math.random() * WORDS.length);
+  let randomWord = WORDS[randomIndex];
 
-  createDivsForChars(word);
+  createDivsForChars(randomWord);
 
   generateLetterButtons();
 
@@ -130,5 +125,5 @@ const resetGame = () => {
     });
   }
 
-  // add an event handler to handle clicking on the Play Again button
+  document.querySelector("#play-again").addEventListener("click", resetGame);
 })();
