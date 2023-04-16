@@ -113,10 +113,22 @@ const resetGame = () => {
 
   generateLetterButtons();
 
-  for (const button of document.querySelectorAll("button")) {
+  for (const button of document.querySelectorAll("#letter-buttons button")) {
     // add an event handler to handle clicking on a letter button
-    // YOUR CODE HERE
-    // add an event handler to handle clicking on the Play Again button
-    // YOUR CODE HERE
+    button.addEventListener("click", () => {
+      const letter = button.innerHTML;
+
+      // you should disable the button so the letter can't be clicked again
+      disableLetterButton(button);
+
+      // you should then check if the currently clicked letter is in the word
+      if (isLetterInWord(letter)) {
+        handleCorrectGuess(letter);
+      } else {
+        handleWrongGuess();
+      }
+    });
   }
+
+  // add an event handler to handle clicking on the Play Again button
 })();
